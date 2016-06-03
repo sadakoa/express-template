@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "babel-node app.js",
+    "start": "nodemon --exec babel-node app.js",
     "build": "browserify -t babelify assets/javascripts/src/index.js -o assets/javascripts/index.js",
     "watch": "npm run build && watchify -d -t babelify assets/javascripts/src/index.js -o assets/javascripts/index.js -v",
     "build:prod": "npm run build && uglifyjs assets/javascripts/index.js --stats -o assets/javascripts/index.js"
