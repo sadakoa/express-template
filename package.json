@@ -1,0 +1,35 @@
+{
+  "name": "express-template",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "babel-node app.js",
+    "build": "browserify -t babelify assets/javascripts/src/index.js -o assets/javascripts/index.js",
+    "watch": "npm run build && watchify -d -t babelify assets/javascripts/src/index.js -o assets/javascripts/index.js -v",
+    "build:prod": "npm run build && uglifyjs assets/javascripts/index.js --stats -o assets/javascripts/index.js"
+  },
+  "dependencies": {
+    "autoprefixer-stylus": "^0.9.3",
+    "body-parser": "~1.13.2",
+    "cookie-parser": "~1.3.5",
+    "debug": "~2.2.0",
+    "express": "~4.13.1",
+    "jade": "~1.11.0",
+    "jquery": "^2.2.4",
+    "morgan": "~1.6.1",
+    "path": "^0.12.7",
+    "serve-favicon": "~2.3.0",
+    "stylus": "^0.54.5"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.9.0",
+    "babel-preset-es2015": "^6.9.0",
+    "babelify": "^7.3.0",
+    "browserify": "^13.0.1",
+    "eslint": "^2.11.1",
+    "eslint-config-airbnb-base": "^3.0.1",
+    "eslint-plugin-import": "^1.8.1",
+    "uglifyjs": "^2.4.10",
+    "watchify": "^3.7.0"
+  }
+}
