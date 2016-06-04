@@ -8,6 +8,10 @@
     "watch": "npm run build && watchify -d -t babelify assets/javascripts/src/index.js -o assets/javascripts/index.js -v",
     "build:prod": "npm run build && uglifyjs assets/javascripts/index.js --stats -o assets/javascripts/index.js"
   },
+  "engines": {
+    "node": "v6.0.0",
+    "npm": "3.8.6"
+  },
   "dependencies": {
     "autoprefixer-stylus": "^0.9.3",
     "babel": "^6.5.2",
