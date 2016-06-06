@@ -1,22 +1,17 @@
 /* eslint-disable no-console */
-// 'use strict';
 
 // express set
 const app = express();
 
 // --------------------------------------------------------------------
 
-// default module
+module
 import express from 'express';
 import path from 'path';
-// import favicon from 'serve-favicon';
+import favicon from 'serve-favicon';
 import logger from 'morgan';
 import cookieParser from 'cookie-parser';
 import bodyParser from 'body-parser';
-
-// --------------------------------------------------------------------
-
-// add module
 import stylus from 'stylus';
 import autoprefixer from 'autoprefixer-stylus';
 
@@ -25,12 +20,6 @@ import autoprefixer from 'autoprefixer-stylus';
 // routeing variable
 import routes from './routes/index';
 import users from './routes/users';
-
-// --------------------------------------------------------------------
-
-// port number
-const port = process.env.PORT || 3000;
-app.set('port', port);
 
 // --------------------------------------------------------------------
 
@@ -52,7 +41,7 @@ app.use(stylus.middleware({
 // --------------------------------------------------------------------
 
 // use PATH
-// app.use(favicon(path.join(__dirname, 'assets', 'favicon.ico')));
+app.use(favicon(path.join(__dirname, 'assets', 'favicon.ico')));
 app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -98,12 +87,9 @@ app.use((err, req, res) => {
 
 // --------------------------------------------------------------------
 
-app.get('/', (req, res) => {
-  res.send('index', {
-    title: 'App Title',
-    description: 'App Description',
-  });
-});
+// port setting
+const port = process.env.PORT || 3000;
+app.set('port', port);
 
 app.listen(app.get('port'), (error) => {
   if (error) {
