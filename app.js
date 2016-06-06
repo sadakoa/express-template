@@ -6,9 +6,9 @@ const app = express();
 // --------------------------------------------------------------------
 
 // module
+// import favicon from 'serve-favicon';
 import express from 'express';
 import path from 'path';
-import favicon from 'serve-favicon';
 import logger from 'morgan';
 import cookieParser from 'cookie-parser';
 import bodyParser from 'body-parser';
@@ -41,7 +41,7 @@ app.use(stylus.middleware({
 // --------------------------------------------------------------------
 
 // use PATH
-app.use(favicon(path.join(__dirname, 'assets', 'favicon.ico')));
+// app.use(favicon(path.join(__dirname, 'assets', 'favicon.ico')));
 app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
